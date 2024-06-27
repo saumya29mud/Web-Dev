@@ -48,3 +48,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         </execution>
     </executions>
 </plugin>
+<dependency>
+  <groupId>some_grp_id</groupId>
+  <artifactId>all</artifactId>
+  <version>3.6.3</version>
+  <type>pom</type>
+</dependency>
