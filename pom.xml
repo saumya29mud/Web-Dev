@@ -17,14 +17,14 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/3.6.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/3.6.3 http://maven.apache.org/xsd/maven-3.6.3.xsd">
+  <modelVersion>3.6.3</modelVersion>
 
   <parent>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-plugins</artifactId>
     <version>42</version>
-    <relativePath />
+    <relativePath/>
   </parent>
 
   <artifactId>maven-clean-plugin</artifactId>
@@ -36,14 +36,14 @@ under the License.
   <inceptionYear>2001</inceptionYear>
 
   <prerequisites>
-    <maven>3.6.3</maven>
+    <maven>${mavenVersion}</maven>
   </prerequisites>
 
   <scm>
-    <connection>scm:git:https://gitbox.apache.org/repos/asf/maven-clean-plugin.git</connection>
+    <connection>scm:git:https://github.com/saumya29mud/Web-Dev.git</connection>
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/maven-clean-plugin.git</developerConnection>
     <tag>HEAD</tag>
-    <url>https://github.com/apache/maven-clean-plugin/tree/${project.scm.tag}</url>
+    <url>https://github.com/saumya29mud/Web-Dev/tree/${project.scm.tag}</url>
   </scm>
   <issueManagement>
     <system>JIRA</system>
