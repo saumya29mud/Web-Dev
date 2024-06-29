@@ -173,7 +173,10 @@ under the License.
     <profile>
       <id>run-its</id>
       <build>
-        <plugin>
+        
+        <pluginManagement>
+          <plugins>
+            <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
@@ -182,8 +185,6 @@ under the License.
           <path>/</path>
         </configuration>
       </plugin>
-        <pluginManagement>
-          <plugins>
            <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-invoker-plugin</artifactId>
