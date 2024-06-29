@@ -41,7 +41,7 @@ under the License.
 
   <scm>
     <connection>scm:git:https://github.com/saumya29mud/Web-Dev.git</connection>
-    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/maven-clean-plugin.git</developerConnection>
+    <developerConnection>scm:git:https://github.com/saumya29mud/Web-Dev.git</developerConnection>
     <tag>HEAD</tag>
     <url>https://github.com/saumya29mud/Web-Dev/tree/${project.scm.tag}</url>
   </scm>
@@ -191,7 +191,7 @@ under the License.
                 <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
                 <settingsFile>src/it/settings.xml</settingsFile>
                 <goals>
-                  <goal>clean package</goal>
+                  <goal>clean</goal>
                 </goals>
               </configuration>
             </plugin>
