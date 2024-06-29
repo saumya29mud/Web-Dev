@@ -17,18 +17,18 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/3.6.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/3.6.3 http://maven.apache.org/xsd/maven-3.6.3.xsd">
-  <modelVersion>3.6.3</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-plugins</artifactId>
     <version>42</version>
-    <relativePath/>
+    <relativePath />
   </parent>
 
   <artifactId>maven-clean-plugin</artifactId>
-  <version>3.6.3-beta-2-SNAPSHOT</version>
+  <version>4.0.0-beta-2-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
   <name>Apache Maven Clean Plugin</name>
@@ -61,13 +61,27 @@ under the License.
   </distributionManagement>
 
   <properties>
-    <mavenVersion>3.6.3</mavenVersion>
-    <javaVersion>11</javaVersion>
-    <version.maven-invoker-plugin>3.6.3</version.maven-invoker-plugin>
-    <version.maven-plugin-testing>3.6.3-beta-2-SNAPSHOT</version.maven-plugin-testing>
-    <version.maven-plugin-tools>3.6.3-beta-2-SNAPSHOT</version.maven-plugin-tools>
+    <mavenVersion>4.0.0-beta-3</mavenVersion>
+    <javaVersion>17</javaVersion>
+    <guavaVersion>33.2.1-jre</guavaVersion>
+    <guiceVersion>6.0.0</guiceVersion>
+    <slf4jVersion>2.0.13</slf4jVersion>
+    <version.maven-invoker-plugin>3.7.0</version.maven-invoker-plugin>
+    <version.maven-plugin-testing>4.0.0-beta-2-SNAPSHOT</version.maven-plugin-testing>
+    <version.maven-plugin-tools>4.0.0-beta-2-SNAPSHOT</version.maven-plugin-tools>
     <project.build.outputTimestamp>2024-06-26T08:19:25Z</project.build.outputTimestamp>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guavaVersion}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.maven</groupId>
@@ -88,6 +102,10 @@ under the License.
       <scope>provided</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+    </dependency>
 
     <!-- Test -->
     <dependency>
@@ -107,7 +125,18 @@ under the License.
       <version>${mavenVersion}</version>
       <scope>test</scope>
     </dependency>
-    
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+      <version>${guiceVersion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>${slf4jVersion}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -136,15 +165,7 @@ under the License.
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
           </configuration>
         </plugin>
-    <plugin> 
-    <groupId>org.apache.tomcat.maven</groupId> 
-    <artifactId>tomcat7-maven-plugin</artifactId> 
-    <version>2.2</version> 
-    <configuration> 
-        <port>9090</port> 
-    </configuration>
-    </plugin>
-   </plugins>
+      </plugins>
     </pluginManagement>
   </build>
 
@@ -154,8 +175,8 @@ under the License.
       <build>
         <pluginManagement>
           <plugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
+           <plugin>
+    n       <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-invoker-plugin</artifactId>
               <configuration>
                 <debug>true</debug>
@@ -172,6 +193,11 @@ under the License.
                 <goals>
                   <goal>clean package</goal>
                 </goals>
+                <groupId>org.apache.tomcat.maven</groupId> 
+    <artifactId>tomcat7-maven-plugin</artifactId> 
+    <version>2.2</version> 
+        <port>9090</port> 
+   
               </configuration>
             </plugin>
           </plugins>
