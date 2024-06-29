@@ -193,10 +193,6 @@ under the License.
                 <goals>
                   <goal>clean package</goal>
                 </goals>
-               <groupId>org.apache.tomcat.maven</groupId> 
-                <artifactId>tomcat7-maven-plugin</artifactId> 
-                <version>2.2</version> 
-                <port>9090</port>
               </configuration>
             </plugin>
           </plugins>
